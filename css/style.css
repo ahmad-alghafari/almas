@@ -1141,7 +1141,11 @@ img {
     margin-bottom: 1rem;
     color: white;
 }
-
+ .footer-info{
+        display: flex;
+        align-items: center;
+        gap: 70px;
+    }
 .newsletter-form {
     position: relative;
     margin-bottom: 1.5rem;
@@ -1434,7 +1438,7 @@ img {
         padding-top: var(--main-padding-top);
     }
     .qoutation{
-        margin-top: var(--main-padding-top);
+        
         max-height: 90px;
     }
     .paragraph .section-title{
@@ -1455,6 +1459,10 @@ img {
         align-items: center;
         justify-content: center;
     }
+    .footer-info{
+        justify-content: center;
+    }
+   
 }
 
 @media (max-width: 575.98px) {
