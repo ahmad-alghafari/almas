@@ -185,7 +185,7 @@ img {
     padding: 1rem 0;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
-
+/* all navbar css */
 .navbar-brand img {
     height: 60px;
     transition: all 0.3s ease;
@@ -195,7 +195,7 @@ img {
     height: 70px;
 }
 .navbar-con{
-    /* width: 100%; */
+
     max-width: 100%;
     position:absolute;
     right:0;
@@ -252,11 +252,11 @@ img {
     box-shadow: none;
 }
 
-/* services list */
+
 .navbar-nav .nested_list{
      display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     gap: 5px;
 }
 .navbar-nav .nested_list > i {
@@ -266,14 +266,13 @@ img {
     transform: rotate(180deg);
 }
 .navbar-nav .nested_list .dropdown-menu{
-    /* display: none ; */
     position: absolute;
     top: 100%;
     width: 200px;
     height: fit-content;
     border-radius:10px ;
     transition: var(--main-transition);
-    background-color: var(--darker);
+    background: transparent;
     border-radius: 10px;
     padding: 10px;
     transition: all 0.3s ease;
@@ -294,13 +293,15 @@ img {
     border-radius: 10px;
 }
 .dropdown-toggle::after {
-    display: none; /* Hide default caret icon if needed */
+    display: none; 
 }
 
-/* change language icon */
 .navbar-nav .language i{
     font-size: 30px;
 }
+
+
+/* end navbar csss */
 .btn-cta {
     background-color: var(--secondary);
     border-color: var(--secondary);
@@ -1300,13 +1301,6 @@ img {
         font-size: 2rem;
     }
     
-    /* .navbar-collapse {
-        background-color: var(--dark);
-        padding: 1.5rem;
-        margin-top: 1rem;
-        border-radius: 0.5rem;
-     
-    } */
    .navbar-nav{
     flex-direction: row ;
     
@@ -1335,30 +1329,32 @@ img {
 }
 
 @media (max-width: 767.98px) {
-     /* .navbar-collapse {
-        background-color: var(--dark);
-        padding: 1.5rem;
-        margin-top: 1rem;
-        border-radius: 0.5rem;
-    } */
+    
     .navbar-nav{
         flex-direction: column !important;
         width: 100%;
         opacity :0;
         display :none;
-        background-color:var(--primary-light);
+        background-color:var(--darker);
         border-radius:20px;
     }
     .navbar-nav .nav-link {
         padding: 0.75rem 1rem;
     }
     .navbar-con{
-    /* width: 100%; */
+    
     max-width: 100%;
     position: absolute;
     top: 70px;
     right:0;
-}
+    }
+    .dropdown-menu{
+        position:relative !important;
+        box-shadow: 0 4px 15px rgba(106, 76, 147, 0.3);
+    }
+    .nested_list{
+        flex-direction:column;
+    }
     .section {
         padding: 3rem 0;
     }

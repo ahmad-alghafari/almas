@@ -278,9 +278,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navbarLinks.classList.toggle('show');
         })
     }
-  
-
-   
     const dropdown = document.querySelector('.nested_list');
     const dropdownMenu = document.querySelector('.dropdown-menu');
     const dropbtn = document.querySelector('.dropbtn');
@@ -293,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.addEventListener('click', function(e) {
            
-            if (!dropdown.contains(e.target) && (!mobileMenu || !mobileMenu.contains(e.target))) {
+            if (!dropdown.contains(e.target) && (!mobileMenu || !mobileMenu.contains(e.target)) &&(!navbarLinks.contains(e.target))) {
                 dropdownMenu.classList.remove('show');
             }
         });
