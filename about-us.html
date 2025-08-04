@@ -27,16 +27,16 @@
 </head>
 <body class="dark-theme">
     <!-- Header/Navigation -->
-   <header class="header fixed-top">
+    <header class="header fixed-top">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="index.html">
-                    <img src="assets/almas-logo.svg" alt="Alma's Printers" class="logo">
+                    <img src="assets/almas-logo.svg" alt="Almas Printers" class="logo">
                 </a>
                 <button class="navbar-toggler" id="mobile-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-con">
                     <ul class="navbar-nav ms-auto navbar-links" id="navbar-links">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item nested_list"><a  class="nav-link dropbtn"  href="#">Services
@@ -55,12 +55,12 @@
                            
                         </li>
                         <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
-                        <li class="nav-item language"><a class="nav-link" href="index-ar.html">
+                        <li class="nav-item language"><a class="nav-link" href="about-us-ar.html">
                             <i class="fas fa-language"></i>
                         </a></li>
                     </ul>
-                    
-                </div>
+                </div> 
+                
             </nav>
           
         </div>
@@ -472,34 +472,6 @@
         });
     </script>
 </body>
-<style>
 
-</style>
-<script>
-    // Add this to your existing script.js
-document.addEventListener('DOMContentLoaded', function() {
-    // Testimonial slider initialization
-    new Swiper('.testimonial-slider', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
-            }
-        }
-    });
-});
-</script>
+
 </html>

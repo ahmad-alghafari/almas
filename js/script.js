@@ -148,31 +148,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-const materialsSlider = new Swiper('.materials-carousel', {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20, // Matches Owl's margin
-    navigation: {
-        nextEl: '.material-next',
-        prevEl: '.material-prev',
-    },
-    pagination: {
-        el: '.material-pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '"></span>';
-        },
-    },
-    breakpoints: {
-        576: {
-            slidesPerView: 2,
-        },
-        992: {
-            slidesPerView: 3,
-        }
-    }
-});
+       
+        const materialsSlider = new Swiper('.materials-carousel', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20, // Matches Owl's margin
+            navigation: {
+                nextEl: '.material-next',
+                prevEl: '.material-prev',
+            },
+            pagination: {
+                el: '.material-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '"></span>';
+                },
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                }
+            }
+        });
 
 
 
@@ -213,7 +213,7 @@ const materialsSlider = new Swiper('.materials-carousel', {
     // Back to Top Button
     const backToTop = document.querySelector('.back-to-top');
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
+        if (window.scrollY > 200) {
             backToTop.classList.add('active');
         } else {
             backToTop.classList.remove('active');
@@ -227,6 +227,18 @@ const materialsSlider = new Swiper('.materials-carousel', {
             behavior: 'smooth'
         });
     });
+
+    // contact button 
+     const tabToContact = document.querySelector('.tab-to-contact');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            tabToContact.classList.add('active');
+        } else {
+            tabToContact.classList.remove('active');
+        }
+    });
+    
+   
 
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -257,28 +269,61 @@ const materialsSlider = new Swiper('.materials-carousel', {
 
 // 
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenu = document.getElementById('mobile-menu');
+    
+    const mobileMenu = document.getElementById('mobile-menu'); 
     const navbarLinks = document.getElementById('navbar-links');
+
+    if (mobileMenu && navbarLinks) { 
+        mobileMenu.addEventListener('click', function() {
+            navbarLinks.classList.toggle('show');
+        })
+    }
+  
+
+   
     const dropdown = document.querySelector('.nested_list');
     const dropdownMenu = document.querySelector('.dropdown-menu');
     const dropbtn = document.querySelector('.dropbtn');
 
-   
-    mobileMenu.addEventListener('click', function() {
-        navbarLinks.classList.toggle('show');
-        mobileMenu.classList.toggle('show'); 
-    });
+    if (dropdown && dropdownMenu && dropbtn) { 
+        dropbtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownMenu.classList.toggle('show');
+        });
 
-    
-    dropbtn.addEventListener('click', function(e) {
-        e.preventDefault(); 
-        dropdownMenu.classList.toggle('show');
-    });
+        document.addEventListener('click', function(e) {
+           
+            if (!dropdown.contains(e.target) && (!mobileMenu || !mobileMenu.contains(e.target))) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    }
+});
 
- 
-    document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target) && !mobileMenu.contains(e.target)) {
-            dropdownMenu.classList.remove('show');
+
+
+// about us page testimoial
+document.addEventListener('DOMContentLoaded', function() {
+    // Testimonial slider initialization
+    new Swiper('.testimonial-slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            }
         }
     });
 });
