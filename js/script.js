@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Preloader
-    window.addEventListener('load', function() {
-        document.querySelector('.preloader').style.display = 'none';
-    });
+
 
     // Header Scroll Effect
     const header = document.querySelector('.header');
@@ -213,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Back to Top Button
     const backToTop = document.querySelector('.back-to-top');
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 200) {
+        if (window.scrollY > 300) {
             backToTop.classList.add('active');
         } else {
             backToTop.classList.remove('active');
@@ -290,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.addEventListener('click', function(e) {
            
-            if (!dropdown.contains(e.target) && (!mobileMenu || !mobileMenu.contains(e.target)) &&(!navbarLinks.contains(e.target))) {
+            if (!dropdown.contains(e.target) && (!mobileMenu || !mobileMenu.contains(e.target))) {
                 dropdownMenu.classList.remove('show');
             }
         });
@@ -324,3 +321,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
