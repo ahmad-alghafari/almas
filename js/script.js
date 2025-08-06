@@ -5,7 +5,48 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Header Scroll Effect
-   l
+   const header = document.querySelector('.header');
+const backtotop = document.querySelector('.back-to-top');
+const tabtocontact = document.querySelector('.tab-to-contact');
+
+// A function to check if the user is on a mobile device
+function isMobile() {
+  return window.innerWidth <= 768; // You can adjust this value
+}
+
+// A function to handle the scroll event
+function handleScroll() {
+  let scrollThreshold = 300; // Default threshold for desktop
+
+  // If on a mobile device, set a lower threshold
+  if (isMobile()) {
+    scrollThreshold = 100; 
+  }
+
+  if (window.scrollY > scrollThreshold) {
+    header.classList.add('scrolled');
+    backtotop.classList.add('active');
+    tabtocontact.classList.add('active');
+  } else {
+    header.classList.remove('scrolled');
+    backtotop.classList.remove('active');
+    tabtocontact.classList.remove('active');
+  }
+}
+
+// Add the scroll event listener with the new function
+window.addEventListener('scroll', handleScroll);
+
+// Add the resize event listener to update the threshold on window resize
+window.addEventListener('resize', handleScroll);
+
+// Back to top button functionality remains the same
+backtotop.addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 
     // Mobile Navigation
     
