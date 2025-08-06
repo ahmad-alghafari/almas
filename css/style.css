@@ -1372,9 +1372,6 @@ img {
     .navbar-nav .nav-link {
         padding: 0.5rem 0;
     }
-    .navbar-toggler{
-        display: none;
-    }
     
     .contact-info {
         padding-right: 0;
