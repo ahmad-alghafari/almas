@@ -442,12 +442,18 @@ img {
 }
 
 .hero-title {
+    position:  relative !important;
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     line-height: 1.2;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
-
+.sub-hero-title{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .hero-subtitle {
     font-size: 1.25rem;
     margin-bottom: 2rem;
@@ -1365,6 +1371,9 @@ img {
    }
     .navbar-nav .nav-link {
         padding: 0.5rem 0;
+    }
+    .navbar-toggler{
+        display: none;
     }
     
     .contact-info {
