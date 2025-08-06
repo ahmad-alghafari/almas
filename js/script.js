@@ -1,22 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
-
+         // Preloader
+    window.addEventListener('load', function() {
+        document.querySelector('.preloader').style.display = 'none';
+    });
 
     // Header Scroll Effect
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+   l
 
     // Mobile Navigation
     
     const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarCollapse = document.querySelector('#navbarNav');
     
     navbarToggler.addEventListener('click', function() {
+        
         navbarCollapse.classList.toggle('show');
     });
 
@@ -207,33 +204,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    // Back to Top Button
-    const backToTop = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('active');
-        } else {
-            backToTop.classList.remove('active');
-        }
-    });
-    
-    backToTop.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
 
-    // contact button 
-     const tabToContact = document.querySelector('.tab-to-contact');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            tabToContact.classList.add('active');
-        } else {
-            tabToContact.classList.remove('active');
-        }
-    });
+
+
+    
+
+
+    
+
     
    
 
@@ -265,7 +243,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // 
-document.addEventListener('DOMContentLoaded', function() {
     
     const mobileMenu = document.getElementById('mobile-menu'); 
     const navbarLinks = document.getElementById('navbar-links');
@@ -292,12 +269,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
+
 
 
 
 // about us page testimoial
-document.addEventListener('DOMContentLoaded', function() {
     // Testimonial slider initialization
     new Swiper('.testimonial-slider', {
         slidesPerView: 1,
@@ -320,6 +296,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-});
+
 
 
