@@ -255,6 +255,9 @@ img {
     padding: 1rem 0;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
+.header.block{
+    display:none;
+}
 /* all navbar css */
 .navbar-brand img {
     height: 60px;
@@ -336,8 +339,8 @@ img {
 .navbar-nav .nested_list > i {
     transition: 0.3s;
 }
-.navbar-nav .nested_list.dropdown-menu.show  i {
-    transform: rotate(180deg);
+.navbar-nav .dropbtn .dropdown-menu.show  i {
+    transform: rotate(-180deg);
 }
 .navbar-nav .nested_list .dropdown-menu{
     position: absolute;
@@ -1443,7 +1446,7 @@ img {
     }
     .hero-slide {
          width: 500px;
-        height: 400px;
+        height: 100vh;
         max-width: 100%;
         max-height: 100%;
     }
@@ -1701,6 +1704,65 @@ img {
      
 }.articles .box:hover .info i::before{
     color: var(--gray);
+}
+/* Fullscreen image viewer styles */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.fullscreen-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fullscreen-image-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+}
+
+.fullscreen-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.close-fullscreen {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.close-fullscreen:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
 }
 /* end articles */
 

@@ -244,18 +244,6 @@ backtotop.addEventListener('click', function() {
         });
     });
 
-
-
-
-
-    
-
-
-    
-
-    
-   
-
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -311,7 +299,67 @@ backtotop.addEventListener('click', function() {
         });
     }
 
+    // Create fullscreen overlay elements
+    const overlay = document.createElement('div');
+    overlay.className = 'fullscreen-overlay';
+    
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'fullscreen-image-container';
+    
+    const fullscreenImg = document.createElement('img');
+    fullscreenImg.className = 'fullscreen-image';
+    
+    const closeBtn = document.createElement('div');
+    closeBtn.className = 'close-fullscreen';
+    closeBtn.innerHTML = '&times;';
 
+    const header = document.querySelector('.header');
+    
+    // Build the overlay structure
+    imageContainer.appendChild(fullscreenImg);
+    overlay.appendChild(imageContainer);
+    overlay.appendChild(closeBtn);
+    document.body.appendChild(overlay);
+    
+    // Add click events to all "Read More" links
+    const readMoreLinks = document.querySelectorAll('.info a');
+    
+    readMoreLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the image from the parent box
+            const box = this.closest('.box');
+            const imgSrc = box.querySelector('img').src;
+            
+            // Set the image source and show overlay
+            fullscreenImg.src = imgSrc;
+            overlay.classList.add('active');
+            
+            // Prevent scrolling when overlay is active
+           header.classList.add('block');
+        });
+    });
+    
+    // Close overlay when clicking close button or overlay background
+    closeBtn.addEventListener('click', closeOverlay);
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+            closeOverlay();
+        }
+    });
+    
+    // Close overlay when pressing Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            closeOverlay();
+        }
+    });
+    
+    function closeOverlay() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 
 
 // about us page testimoial
