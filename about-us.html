@@ -19,8 +19,6 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -82,7 +80,7 @@
     <section class="hero-about-section" style="background-image: url('assets/printer.jpg')">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-7">
+                <div class="col-lg-7" style="z-index: 1000;">
                     <h1 class="hero-title" data-aos="fade-up">Crafting Elegance in Every Print</h1>
                     <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
                         We've been transforming visions into tangible masterpieces 
@@ -457,30 +455,13 @@
         </div>
     </footer>
 
+     <!-- Back to Top -->
+    <a href="#" class="back-to-top" ><i class="fas fa-arrow-up" ></i></a>
+    <!-- contact button -->
+    <a href="tel:+966126406770" class="tab-to-contact" ><i class="fas fa-phone"></i></a>
+
     <!-- JavaScript -->
      <script src="js/script.js"></script>
-     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     <script>
-        AOS.init({
-            duration: 1200,
-            once: true
-        });
-    </script>
-    <script>
-
-    // Testimonial slider initialization
-     const heroSwiper = new Swiper('.hero-slider', {
-         loop: true,
-        autoplay: {
-            delay: 3000,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        effect: 'fade',
-    });
-</script>
 
 </body>
 

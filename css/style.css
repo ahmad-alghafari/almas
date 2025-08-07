@@ -338,9 +338,6 @@ img {
 .navbar-nav .nested_list > i {
     transition: 0.3s;
 }
-.navbar-nav .dropbtn .dropdown-menu.show  i {
-    transform: rotate(-180deg);
-}
 .navbar-nav .nested_list .dropdown-menu{
     position: absolute;
     top: 100%;
@@ -1817,6 +1814,7 @@ img {
 /* about page  */
 .col-lg-7-ar{
    direction: rtl;
+   z-index: 1000;
 }
 .hero-about-section {
     background-size: cover;
