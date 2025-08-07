@@ -265,6 +265,8 @@ document.addEventListener('DOMContentLoaded', function() {
            
             if (!dropdown.contains(e.target) && (!mobileMenu || !mobileMenu.contains(e.target))) {
                 dropdownMenu.classList.remove('show');
+                navbarLinks.classList.remove('show');
+
             }
         });
     }
