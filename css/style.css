@@ -442,6 +442,7 @@ img {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    z-index: 1000;
 }
 
 .hero-title {
@@ -1454,7 +1455,7 @@ img {
         width: 50%;
     }
     .hero-btn{
-        width: 70% !important;
+        width: 50% !important;
     }
     .hero-subtitle {
         font-size: 1rem;
@@ -1501,6 +1502,10 @@ img {
     .contact-section .section-title{
         text-align: center;
     }
+    .qoutation{
+        max-height: 90px;
+        margin-top: 60px;
+    }
     .qoutation .container{
         max-width: 767.98px;
         width: 767.98px;
@@ -1514,10 +1519,6 @@ img {
     }
     .materials-features{
         padding-top: var(--main-padding-top);
-    }
-    .qoutation{
-        
-        max-height: 90px;
     }
     .paragraph .section-title{
         font-weight:lighter;
@@ -1818,13 +1819,7 @@ img {
 }
 /* about page  */
 .col-lg-7-ar{
-   display: flex;
-    margin-left: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: auto;
-    text-align: center;
+   direction: rtl;
 }
 .hero-about-section {
     background-size: cover;

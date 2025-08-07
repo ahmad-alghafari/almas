@@ -264,14 +264,14 @@ backtotop.addEventListener('click', function() {
 
     // Initialize AOS Animation
     AOS.init({
-        duration: 800,
+        duration: 600,
         easing: 'ease-in-out',
         once: true
     });
 });
 
 
-// 
+// handling menu 
     
     const mobileMenu = document.getElementById('mobile-menu'); 
     const navbarLinks = document.getElementById('navbar-links');
@@ -346,6 +346,7 @@ backtotop.addEventListener('click', function() {
     overlay.addEventListener('click', function(e) {
         if (e.target === overlay) {
             closeOverlay();
+            header.classList.remove('block');
         }
     });
     
@@ -353,11 +354,13 @@ backtotop.addEventListener('click', function() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && overlay.classList.contains('active')) {
             closeOverlay();
+            header.classList.remove('block');
         }
     });
     
     function closeOverlay() {
         overlay.classList.remove('active');
+        header.classList.remove('block');
         document.body.style.overflow = '';
     }
 
