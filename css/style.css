@@ -1503,7 +1503,7 @@ img {
         text-align: center;
     }
     .qoutation{
-        max-height: 90px;
+        max-height: 100px;
     }
     .qoutation .container{
         max-width: 767.98px;
@@ -1976,6 +1976,7 @@ img {
     overflow: hidden;
     display: flex;
     align-items: center;
+
 }
 .paragraph{
     width: 60%;

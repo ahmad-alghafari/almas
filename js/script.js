@@ -4,49 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.preloader').style.display = 'none';
     });
 
-    // Header Scroll Effect
-   const header = document.querySelector('.header');
-const backtotop = document.querySelector('.back-to-top');
-const tabtocontact = document.querySelector('.tab-to-contact');
+      // Header Scroll Effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
-// A function to check if the user is on a mobile device
-function isMobile() {
-  return window.innerWidth <= 768; // You can adjust this value
-}
-
-// A function to handle the scroll event
-function handleScroll() {
-  let scrollThreshold = 300; // Default threshold for desktop
-
-  // If on a mobile device, set a lower threshold
-  if (isMobile()) {
-    scrollThreshold = 100; 
-  }
-
-  if (window.scrollY > scrollThreshold) {
-    header.classList.add('scrolled');
-    backtotop.classList.add('active');
-    tabtocontact.classList.add('active');
-  } else {
-    header.classList.remove('scrolled');
-    backtotop.classList.remove('active');
-    tabtocontact.classList.remove('active');
-  }
-}
-
-// Add the scroll event listener with the new function
-window.addEventListener('scroll', handleScroll);
-
-// Add the resize event listener to update the threshold on window resize
-window.addEventListener('resize', handleScroll);
-
-// Back to top button functionality remains the same
-backtotop.addEventListener('click', function() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
 
     // Mobile Navigation
     
@@ -268,6 +235,9 @@ backtotop.addEventListener('click', function() {
         easing: 'ease-in-out',
         once: true
     });
+
+    
+
 });
 
 
@@ -362,32 +332,32 @@ backtotop.addEventListener('click', function() {
         overlay.classList.remove('active');
         header.classList.remove('block');
         document.body.style.overflow = '';
-    }
+    };
 
-
-// about us page testimoial
-    // Testimonial slider initialization
-    new Swiper('.testimonial-slider', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
-            }
+    // Back to Top & contact  Button
+    const backToTop = document.querySelector('.back-to-top');
+    const tapToContact = document.querySelector('.tab-to-contact');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('active');
+            tapToContact.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+            tapToContact.classList.remove('active');
         }
     });
+    
+    backToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+
+
+
 
 
 
